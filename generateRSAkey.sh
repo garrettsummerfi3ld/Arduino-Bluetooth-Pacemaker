@@ -34,3 +34,8 @@ openssl x509 \
        -signkey whkeyserver.key \
        -in whkeyserver.csr \
        -req -days 365 -out whkeyserver.crt
+
+echo "Verifying private keys matching the certificates and CSR"
+openssl rsa -noout -modulus -in domain.key | openssl md5
+openssl x509 -noout -modulus -in domain.crt | openssl md5
+openssl req -noout -modulus -in domain.csr | openssl md5
