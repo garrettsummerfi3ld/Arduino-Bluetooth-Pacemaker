@@ -1,7 +1,3 @@
-/*
- * This is a very early prototype with sample code
- * this will change later soon enough and will actually function once this is done
- */
 char shockData = 0;            //Variable for storing received data
 void setup()
 {
