@@ -37,12 +37,16 @@ void loop() {
             digitalWrite(connectionPin, LOW);
         }
     }
-    while (true) {
-        // sets the Green LED on
-        digitalWrite(pulsePin, HIGH);
-        // waits for half a second
-        delay(500);
-        // sets the Green LED off
-        digitalWrite(pulsePin, LOW);
+    while(true){
+    // sets the Green LED on
+    digitalWrite(pulsePin, HIGH);
+    // waits for one and a half seconds
+    delay(1500);
+    digitalWrite(connectionPin, HIGH);
+    delay(500);
+    // sets the Green LED off
+    digitalWrite(pulsePin, LOW);
+    delay(500);
+    digitalWrite(connectionPin, LOW);
     }
 }
