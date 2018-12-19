@@ -1,6 +1,6 @@
 {
     "board": "arduino:avr:uno",
-    "programmer": "AVR ISP",
+    "programmer": "AVRISP mkII",
     "port": "COM7",
     "sketch": "Bluetooth_test.ino"
 }

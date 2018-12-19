@@ -1,19 +1,48 @@
-char shockData = 0;            //Variable for storing received data
-void setup()
-{
-    Serial.begin(9600);   //Sets the baud for serial data transmission                               
-    pinMode(13, OUTPUT);  //Sets digital pin 13 as output pin
+// Variables for storing data
+// The ints for the pins are for the mapping of the hardware
+int connectionPin = 10;
+int pulsePin = 11;
+
+char shockData = 0;
+
+void setup() {
+    // Sets the baud for serial data transmission
+    Serial.begin(9600);
+    // Sets digital pin 13 as output pin
+    pinMode(13, OUTPUT);
+    // sets the digital pin as output
+    pinMode(connectionPin, OUTPUT);
+    // sets the digital pin as output
+    pinMode(pulsePin, OUTPUT);
 }
-void loop()
-{
-   if(Serial.available() > 0)      // Send data only when you receive data:
-   {
-      shockData = Serial.read();        //Read the incoming data & store into data
-      Serial.print(shockData);          //Print Value inside data in Serial monitor
-      Serial.print("\n");        
-      if(shockData == '1')              // Checks whether value of data is equal to 1
-         digitalWrite(13, HIGH);   //If value is 1 then LED turns ON
-      else if(shockData == '0')         //  Checks whether value of data is equal to 0
-         digitalWrite(13, LOW);    //If value is 0 then LED turns OFF
-   }
+
+void loop() {
+    // Send data only when you receive data:
+    if (Serial.available() > 0) { 
+        // Read the incoming data & store into data
+        shockData = Serial.read();
+        //Print Value inside data in Serial monitor
+        Serial.print(shockData);
+        Serial.print("\n");
+        // Checks whether value of data is equal to '1' or '0'
+        if (shockData == '1') {
+            //If value is 1 then LED turns ON
+            digitalWrite(13, HIGH);
+            // sets the Red LED on
+            digitalWrite(connectionPin, HIGH);
+        } else if (shockData == '0') {
+            //If value is 0 then LED turns OFF
+            digitalWrite(13, LOW);
+            // sets the Red LED off
+            digitalWrite(connectionPin, LOW);
+        }
+    }
+    while (true) {
+        // sets the Green LED on
+        digitalWrite(pulsePin, HIGH);
+        // waits for half a second
+        delay(500);
+        // sets the Green LED off
+        digitalWrite(pulsePin, LOW);
+    }
 }
