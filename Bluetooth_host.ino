@@ -41,12 +41,12 @@ void loop() {
     // sets the Green LED on
     digitalWrite(pulsePin, HIGH);
     // waits for one and a half seconds
-    delay(1500);
+    delay(666);
     digitalWrite(connectionPin, HIGH);
-    delay(500);
+    delay(200);
     // sets the Green LED off
     digitalWrite(pulsePin, LOW);
-    delay(500);
+    delay(666);
     digitalWrite(connectionPin, LOW);
     }
 }
