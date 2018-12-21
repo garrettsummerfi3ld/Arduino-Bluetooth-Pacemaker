@@ -3,13 +3,13 @@
         {
             "name": "Win32",
             "includePath": [
+                "C:\\Users\\Garrett\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
+                "C:\\Users\\Garrett\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.0-beta2\\**",
                 "C:\\Users\\Garrett\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
                 "C:\\Users\\Garrett\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.23\\**",
                 "C:/Users/Garrett/AppData/Local/Arduino15/packages/arduino/tools/avr-gcc/5.4.0-atmel3.6.1-arduino2/avr/include"
             ],
-            "forcedInclude": [
-                "C:\\Users\\Garrett\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.6.23\\cores\\arduino\\Arduino.h"
-            ],
+            "forcedInclude": [],
             "intelliSenseMode": "msvc-x64",
             "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.15.26726/bin/Hostx64/x64/cl.exe",
             "cStandard": "c11",
