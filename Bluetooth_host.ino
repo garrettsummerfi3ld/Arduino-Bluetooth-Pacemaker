@@ -14,6 +14,8 @@ void setup() {
     pinMode(connectionPin, OUTPUT);
     // sets the digital pin as output
     pinMode(pulsePin, OUTPUT);
+    // initialize digital pin LED_BUILTIN as an output.
+    pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
@@ -21,7 +23,7 @@ void loop() {
     if (Serial.available() > 0) { 
         // Read the incoming data & store into data
         shockData = Serial.read();
-        //Print Value inside data in Serial monitor
+        // Print Value inside data in Serial monitor
         Serial.print(shockData);
         Serial.print("\n");
         // Checks whether value of data is equal to '1' or '0'
@@ -37,16 +39,26 @@ void loop() {
             digitalWrite(connectionPin, LOW);
         }
     }
-    while(true){
-    // sets the Green LED on
-    digitalWrite(pulsePin, HIGH);
-    // waits for one and a half seconds
-    delay(666);
-    digitalWrite(connectionPin, HIGH);
-    delay(200);
-    // sets the Green LED off
-    digitalWrite(pulsePin, LOW);
-    delay(200);
-    digitalWrite(connectionPin, LOW);
+    // Breadboard LEDs
+    while(true) {
+        // sets the Green LED on
+        digitalWrite(pulsePin, HIGH);
+        // waits for one and a half seconds
+        delay(666);
+        digitalWrite(connectionPin, HIGH);
+        delay(200);
+        // sets the Green LED off
+        digitalWrite(pulsePin, LOW);
+        delay(200);
+        digitalWrite(connectionPin, LOW);
+    }
+    // Onboard LEDs
+    while(true) {
+        // turn the LED on (HIGH is the voltage level)
+        digitalWrite(LED_BUILTIN, HIGH);
+        delay(50);
+        // turn the LED off by making the voltage LOW
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(50);
     }
 }
